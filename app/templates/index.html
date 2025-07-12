@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phishing URL Detector</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #ffffff22;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            color: #00e6e6;
+        }
+
+        input[type=text] {
+            padding: 12px 15px;
+            width: 90%;
+            border-radius: 8px;
+            border: none;
+            font-size: 16px;
+            margin-bottom: 20px;
+            outline: none;
+        }
+
+        input[type=submit] {
+            padding: 12px 30px;
+            background-color: #00e6e6;
+            color: #000;
+            border: none;
+            font-weight: 600;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .result {
+            margin-top: 25px;
+            font-size: 20px;
+            font-weight: bold;
+            background-color: #ffffff33;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 15px;
+            text-align: center;
+            font-size: 14px;
+            color: #ccc;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        footer span {
+            color: #00e6e6;
+            font-weight: 600;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🛡️ Phishing URL Detector</h1>
+        <form method="post">
+            <input type="text" name="url" placeholder="Enter a URL..." required><br>
+            <input type="submit" value="Check URL">
+        </form>
+        {% if result %}
+        <div class="result">{{ result }}</div>
+        {% endif %}
+    </div>
+
+    <footer>
+        Made with ❤️ by <span>Surya Pratap Singh</span>
+    </footer>
+</body>
+</html>
